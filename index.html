@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>漢魂卡牌｜Soul of Han</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@400;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --dark:#0f0e0d;
+  --gold:#c9a13a;
+  --paper:#ede4c9;
+}
+
+body{
+  margin:0;
+  font-family:'Noto Serif TC',serif;
+  color:var(--paper);
+  background:
+    linear-gradient(rgba(15,14,13,.85),rgba(15,14,13,.9)),
+    url('https://i.imgur.com/9nQZJxK.jpg') center/cover fixed;
+}
+
+/* ===== Header & Nav ===== */
+header{
+  position:fixed;
+  top:0;left:0;right:0;
+  height:64px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:0 40px;
+  background:rgba(0,0,0,.65);
+  z-index:1000;
+}
+
+.logo{color:var(--gold);letter-spacing:2px}
+
+nav a{
+  margin-left:24px;
+  color:var(--paper);
+  text-decoration:none;
+  position:relative;
+}
+
+nav a::after{
+  content:"";
+  position:absolute;
+  left:0;bottom:-6px;
+  width:0;height:1px;
+  background:var(--gold);
+  transition:.3s;
+}
+nav a:hover::after{width:100%}
+
+/* ===== Section ===== */
+section{
+  min-height:100vh;
+  padding:120px 10vw 80px;
+}
+
+/* ===== Hero ===== */
+.hero{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  background:
+    linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.8)),
+    url('https://i.imgur.com/7J7lqkH.jpg') center/cover;
+}
+
+.hero h1{
+  font-size:48px;
+  color:var(--gold);
+  letter-spacing:4px;
+}
+
+/* ===== Headings ===== */
+h2{color:var(--gold)}
+
+/* ===== Gallery / Cards ===== */
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+  gap:32px;
+  margin-top:40px;
+}
+
+.card{
+  background:rgba(0,0,0,.55);
+  border:1px solid rgba(201,161,58,.4);
+  cursor:pointer;
+  transition:.3s;
+  border-radius:12px;
+  overflow:hidden;
+}
+
+.card:hover{
+  transform:translateY(-6px);
+  box-shadow:0 0 30px rgba(0,0,0,.8);
+}
+
+.card img{
+  width:100%;
+  height:360px;
+  object-fit:cover;
+}
+
+.card .name{
+  text-align:center;
+  padding:12px;
+  letter-spacing:2px;
+}
+
+/* ===== Brand / Info Cards ===== */
+.info-card{
+  background:rgba(0,0,0,0.55);
+  border:1px solid rgba(201,161,58,0.25);
+  padding:40px;
+  margin-top:40px;
+  border-radius:12px;
+  box-shadow:0 0 30px rgba(0,0,0,.6);
+}
+
+/* ===== Modal ===== */
+.modal{
+  position:fixed;
+  inset:0;
+  background:rgba(0,0,0,.85);
+  display:none;
+  justify-content:center;
+  align-items:center;
+  z-index:2000;
+}
+
+.modal.active{display:flex}
+
+.modal-box{
+  background:rgba(15,14,13,.95);
+  border:1px solid var(--gold);
+  max-width:800px;
+  width:90%;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:24px;
+  padding:24px;
+  animation:fadeUp .4s ease;
+}
+
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(20px)}
+  to{opacity:1;transform:translateY(0)}
+}
+
+.modal-box img{
+  width:100%;
+  border:1px solid rgba(201,161,58,.4);
+}
+
+.modal-info h3{
+  color:var(--gold);
+  margin-top:0;
+}
+
+.modal-close{
+  position:absolute;
+  top:20px;
+  right:30px;
+  font-size:28px;
+  color:#fff;
+  cursor:pointer;
+}
+
+/* ===== Footer ===== */
+footer{
+  text-align:center;
+  padding:40px;
+  color:#aaa;
+  background:rgba(0,0,0,.6);
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo">漢魂卡牌｜Soul of Han</div>
+  <nav>
+    <a href="#home">首頁</a>
+    <a href="#brand">探索品牌</a>
+    <a href="#design">角色卡牌</a>
+    <a href="#ai">AI 協作</a>
+    <a href="#result">成果反思</a>
+  </nav>
+</header>
+
+<!-- ===== Hero ===== -->
+<section id="home" class="hero">
+  <h1>喚醒你的卡牌魂<br>重寫三國歷史</h1>
+</section>
+
+<!-- ===== Brand Section ===== -->
+<section id="brand">
+  <div class="info-card">
+    <h2>探索品牌｜關於我們</h2>
+    <p>
+      漢魂卡牌致力於將三國的「仁義、忠誠、野心與謀略」
+      轉化為具敘事深度的卡牌體驗。
+      我們相信歷史不只是過去，而是可以再次被選擇的未來。
+    </p>
+  </div>
+</section>
+
+<!-- ===== Design / Card Gallery ===== -->
+<section id="design">
+  <h2>人物卡牌（點擊查看介紹）</h2>
+  <div class="gallery">
+
+    <div class="card" onclick="openModal('diaochan')">
+      <img src="FED9E633-739F-460F-B6AA-B2389941B051.jpeg">
+      <div class="name">SSR・貂蟬</div>
+    </div>
+
+    <div class="card" onclick="openModal('guanyu')">
+      <img src="95F0566F-C104-4DCE-8B53-728A9D7993EA.jpeg">
+      <div class="name">SSR・關羽</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== AI Section ===== -->
+<section id="ai">
+  <div class="info-card">
+    <h2>AI 協作館</h2>
+    <p>
+      本專案運用 ChatGPT 作為敘事與系統設計輔助，
+      AI 協助整理世界觀、角色定位與展示架構，
+      人類創作者負責審美判斷與最終決策。
+    </p>
+  </div>
+</section>
+
+<!-- ===== Result Section ===== -->
+<section id="result">
+  <div class="info-card">
+    <h2>成果與反思</h2>
+    <p>
+      從遊戲構想轉為卡牌品牌，是一次策略調整。
+      透過 AI 協作，我能更專注於核心創意，
+      也理解「工具」與「創作主權」之間的平衡。
+    </p>
+  </div>
+</section>
+
+<!-- ===== Modal ===== -->
+<div class="modal" id="modal">
+  <div class="modal-close" onclick="closeModal()">×</div>
+  <div class="modal-box">
+    <img id="modalImg">
+    <div class="modal-info">
+      <h3 id="modalName"></h3>
+      <p id="modalText"></p>
+    </div>
+  </div>
+</div>
+
+<footer>
+© 2025 漢魂卡牌 Soul of Han｜展示用途
+</footer>
+
+<script>
+const data = {
+  diaochan:{
+    name:"SSR・貂蟬",
+    img:"FED9E633-739F-460F-B6AA-B2389941B051.jpeg",
+    text:"亂世紅顏，以柔制剛。貂蟬周旋於權謀與情感之間，以智慧與美貌改寫歷史走向。"
+  },
+  guanyu:{
+    name:"SSR・關羽",
+    img:"95F0566F-C104-4DCE-8B53-728A9D7993EA.jpeg",
+    text:"武聖臨世，忠義無雙。關羽手持青龍偃月刀，象徵不滅的信念與漢魂精神。"
+  }
+};
+
+const modal = document.getElementById('modal');
+const modalImg = document.getElementById('modalImg');
+const modalName = document.getElementById('modalName');
+const modalText = document.getElementById('modalText');
+
+function openModal(key){
+  modal.classList.add('active');
+  modalImg.src = data[key].img;
+  modalName.innerText = data[key].name;
+  modalText.innerText = data[key].text;
+}
+
+function closeModal(){
+  modal.classList.remove('active');
+}
+</script>
+
+</body>
+</html>
